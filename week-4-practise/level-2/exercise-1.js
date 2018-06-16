@@ -11,13 +11,20 @@ We made a start on this for you here:
 var bottle = {
 	volume: 0,
 	fill: function(){
+		 this.volume = 100;
 	 	// calling this function should make you bottles volume = 100; 
 	},
 	drink: function(){
 		// calling this function should decrease your bottles volume by 10;
+		this.volume -= 10;
 	},
 	empty: function(){
 		// this function should return true if your bottles volume = 0
+		if (this.volume === 0){
+			return true;
+		}
+		else {return false;}
+	
 	}
 }
 
@@ -33,8 +40,13 @@ matches the expected result at the bottom :)
 
 bottle.fill();
 bottle.drink();
+console.log(bottle.volume);
 bottle.drink();
+console.log(bottle.volume);
 bottle.drink();
+console.log(bottle.volume);
+console.log(!bottle.volume === 0);
+console.log(bottle.empty());
 if(!bottle.empty()){
 	console.log('bottles volume = ' + bottle.volume);
 }

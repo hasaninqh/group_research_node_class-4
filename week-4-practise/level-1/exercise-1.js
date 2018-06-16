@@ -38,7 +38,17 @@ var writers = [
     alive: true
   },
 ];
-
+/*writers.forEach(arrayLog);
+function arrayLog(writers){
+  if (writers.alive){
+ console.log("Hi, my name is "+ writers.firstName +" "+ writers.lastName + " I am " + writers.age+ " years old, and work as a " +writers.occupation+".");
+  }
+}*/
+var livingWriters = writers.filter(function(writer){
+  return writer.alive;
+}).map(function(writer){
+  console.log(`Hi, My name is  ${writer.firstName} ${writer.lastName}.`)
+});
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */
